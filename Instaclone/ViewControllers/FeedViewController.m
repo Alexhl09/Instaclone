@@ -10,13 +10,15 @@
 #import "FeedViewController.h"
 #import "../Cells/InstagramPostCollectionViewCell.h"
 #import "DetailsPostViewController.h"
+#import "ProfileViewController.h"
 
 
 
-@interface FeedViewController () <UICollectionViewDelegate, UICollectionViewDataSource, didLike>
+@interface FeedViewController () <UICollectionViewDelegate, UICollectionViewDataSource, didLike, didClickPhoto>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionViewInstaPost;
 @property (strong, nonatomic) Post * selectedPost;
 @property (strong, nonatomic) NSArray * posts;
+@property (strong, nonatomic) PFUser * selectedUsername;
 @property BOOL liked;
 @end
 
@@ -105,6 +107,10 @@ UIRefreshControl *refreshControl = nil;
         vc.myPost = _selectedPost;
         vc.liked = _liked;
         vc.delegateLike = self;
+    }else if([segue.identifier isEqualToString:@"profile"])
+    {
+        ProfileViewController * vc = [segue destinationViewController];
+        vc.usernameProfile = _selectedUsername;
     }
 }
 
@@ -115,6 +121,7 @@ UIRefreshControl *refreshControl = nil;
     Post * myPost = _posts[indexPath.row];
     [myCell setPost:myPost];
     myCell.delegate = self;
+    myCell.delegateProfile = self;
     
      return myCell;
 }
@@ -134,4 +141,10 @@ UIRefreshControl *refreshControl = nil;
 
 }
 
-@end
+- (void)performSegue:(nonnull PFUser *)user {
+    _selectedUsername = user;
+    [self performSegueWithIdentifier:@"profile" sender:self];
+}
+    
+    
+    @end

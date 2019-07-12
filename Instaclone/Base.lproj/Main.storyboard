@@ -537,7 +537,7 @@
                         <viewLayoutGuide key="safeArea" id="cNQ-fM-678"/>
                     </view>
                     <navigationItem key="navigationItem" id="nbc-Fb-2e8">
-                        <barButtonItem key="leftBarButtonItem" title="Log out" id="lwd-93-POX">
+                        <barButtonItem key="rightBarButtonItem" title="Log out" id="lwd-93-POX">
                             <connections>
                                 <action selector="logOut:" destination="kWo-Rp-gc1" id="u5D-jI-Ibb"/>
                             </connections>
@@ -545,6 +545,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionMyProfile" destination="fe3-Jw-suL" id="1qr-Fc-Sce"/>
+                        <outlet property="editProfileButton" destination="tB7-JZ-SEw" id="983-pn-eeC"/>
                         <outlet property="name" destination="mUX-wL-0zo" id="Fan-k9-ebY"/>
                         <outlet property="numberPost" destination="B3R-6r-djE" id="CFq-Tq-cy4"/>
                         <outlet property="profileImage" destination="E2o-Ra-tA2" id="bcF-Ev-HaY"/>
@@ -554,7 +555,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDB-ln-3tc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3405.7971014492755" y="2353.7946428571427"/>
+            <point key="canvasLocation" x="5028" y="133"/>
         </scene>
         <!--Detail Profile View Controller-->
         <scene sceneID="Gg1-sQ-DkR">
@@ -778,13 +779,17 @@
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6B5-KI-0Hz" customClass="PFImageView">
                                                             <rect key="frame" x="20" y="72" width="371" height="268.5"/>
                                                         </imageView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="account" translatesAutoresizingMaskIntoConstraints="NO" id="iio-ag-rwb" customClass="PFImageView">
+                                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="account" translatesAutoresizingMaskIntoConstraints="NO" id="iio-ag-rwb" customClass="PFImageView">
                                                             <rect key="frame" x="32" y="8" width="46" height="46"/>
                                                             <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <gestureRecognizers/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="46" id="mR0-0x-u5Z"/>
                                                                 <constraint firstAttribute="height" constant="46" id="zIv-Hg-hbb"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <outletCollection property="gestureRecognizers" destination="AGS-tU-lGa" appends="YES" id="IWB-dW-XdI"/>
+                                                            </connections>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="TBm-Kn-RdR">
                                                             <rect key="frame" x="32" y="348.5" width="160" height="30.5"/>
@@ -849,23 +854,33 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Icb-pf-mbq">
+                                                            <rect key="frame" x="32" y="8" width="46" height="46"/>
+                                                            <connections>
+                                                                <action selector="tapImage:" destination="1D8-4r-mD2" eventType="touchUpInside" id="Rwv-bx-1NV"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="DZK-3o-0hK" firstAttribute="leading" secondItem="IjB-Eb-0bU" secondAttribute="leading" id="4s1-Sr-zc4"/>
                                                         <constraint firstItem="HrR-TA-fRZ" firstAttribute="centerY" secondItem="cOC-nw-DnX" secondAttribute="centerY" id="5oj-2l-weX"/>
                                                         <constraint firstItem="cOC-nw-DnX" firstAttribute="leading" secondItem="HrR-TA-fRZ" secondAttribute="trailing" constant="32" id="5rz-59-MRf"/>
+                                                        <constraint firstItem="Icb-pf-mbq" firstAttribute="width" secondItem="iio-ag-rwb" secondAttribute="width" id="7tj-y7-grJ"/>
                                                         <constraint firstItem="cOC-nw-DnX" firstAttribute="trailing" secondItem="6B5-KI-0Hz" secondAttribute="trailing" id="9u7-e3-LDs"/>
                                                         <constraint firstItem="6B5-KI-0Hz" firstAttribute="top" secondItem="iio-ag-rwb" secondAttribute="bottom" constant="18" id="BwC-zn-6s2"/>
                                                         <constraint firstAttribute="trailing" secondItem="TBm-Kn-RdR" secondAttribute="trailing" constant="219" id="Cfg-sz-pPW"/>
+                                                        <constraint firstItem="Icb-pf-mbq" firstAttribute="height" secondItem="iio-ag-rwb" secondAttribute="height" id="OF0-aE-aoF"/>
                                                         <constraint firstItem="iio-ag-rwb" firstAttribute="leading" secondItem="TBm-Kn-RdR" secondAttribute="leading" id="PBc-kt-ANd"/>
                                                         <constraint firstItem="iio-ag-rwb" firstAttribute="leading" secondItem="cXK-sQ-MdE" secondAttribute="leading" constant="32" id="UKJ-RC-5gY"/>
                                                         <constraint firstItem="IjB-Eb-0bU" firstAttribute="top" secondItem="MW4-HJ-kqs" secondAttribute="bottom" constant="3" id="UT2-bc-KUb"/>
+                                                        <constraint firstItem="Icb-pf-mbq" firstAttribute="top" secondItem="iio-ag-rwb" secondAttribute="top" id="UXJ-mO-gy4"/>
                                                         <constraint firstItem="MW4-HJ-kqs" firstAttribute="leading" secondItem="TBm-Kn-RdR" secondAttribute="leading" id="W6j-26-oOo"/>
                                                         <constraint firstItem="DZK-3o-0hK" firstAttribute="trailing" secondItem="MW4-HJ-kqs" secondAttribute="trailing" id="ZoQ-tA-HYS"/>
                                                         <constraint firstItem="iio-ag-rwb" firstAttribute="centerY" secondItem="HrR-TA-fRZ" secondAttribute="centerY" id="a8C-2A-fdK"/>
                                                         <constraint firstItem="HrR-TA-fRZ" firstAttribute="leading" secondItem="iio-ag-rwb" secondAttribute="trailing" constant="8" symbolic="YES" id="aRf-KH-kNR"/>
                                                         <constraint firstItem="DZK-3o-0hK" firstAttribute="bottom" secondItem="cXK-sQ-MdE" secondAttribute="bottomMargin" constant="-8" id="awu-UW-CqK"/>
+                                                        <constraint firstItem="Icb-pf-mbq" firstAttribute="leading" secondItem="iio-ag-rwb" secondAttribute="leading" id="bmm-fQ-Jf3"/>
                                                         <constraint firstItem="iio-ag-rwb" firstAttribute="top" secondItem="cXK-sQ-MdE" secondAttribute="topMargin" id="e0w-3o-n1c"/>
                                                         <constraint firstAttribute="bottom" secondItem="IjB-Eb-0bU" secondAttribute="bottom" constant="42" id="f7C-KV-TNO"/>
                                                         <constraint firstItem="6B5-KI-0Hz" firstAttribute="trailing" secondItem="IjB-Eb-0bU" secondAttribute="trailing" id="g3f-kb-yDi"/>
@@ -924,9 +939,16 @@
                     <connections>
                         <outlet property="collectionViewInstaPost" destination="egh-Oz-kne" id="Fpz-EY-M2c"/>
                         <segue destination="l7A-P0-MQO" kind="show" identifier="details" id="OTd-ol-lRE"/>
+                        <segue destination="kWo-Rp-gc1" kind="show" identifier="profile" id="lOF-lS-zJm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qBV-mO-rph" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="CFE-vK-Ofc" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="AGS-tU-lGa">
+                    <connections>
+                        <action selector="tapImage:" destination="CFE-vK-Ofc" id="gos-Uz-XqU"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3373.913043478261" y="-317.41071428571428"/>
         </scene>
@@ -1138,5 +1160,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gR5-6c-qks"/>
+        <segue reference="lOF-lS-zJm"/>
     </inferredMetricsTieBreakers>
 </document>

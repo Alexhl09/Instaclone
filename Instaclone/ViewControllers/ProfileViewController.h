@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "HomeViewController.h"
+#import "DetailProfileViewController.h"
+#import "DetailsPostViewController.h"
+#import "../Cells/MyPostCollectionViewCell.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ProfileViewController : UIViewController
+    @property (strong, nonatomic) PFUser * usernameProfile;
 -(void) getMyPhotos;
 @end
 

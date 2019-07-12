@@ -29,8 +29,13 @@
    
     [self changeImageButtonLike:self.liked];
 
-   
+//    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+//    imageView.isUserInteractionEnabled = true
+//    imageView.addGestureRecognizer(tapGestureRecognizer)
     
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapMyImage)];
+    [_photoImage addGestureRecognizer:tap];
+    [_photoImage setUserInteractionEnabled:YES];
     PFUser * author = post[@"author"];
     NSDate * myDate = author.createdAt;
 
@@ -127,5 +132,11 @@
         }];
     }
 }
+- (IBAction)tapImage:(UIButton *)sender {
+    NSLog(@"HEY");
+    PFUser * author = _post[@"author"];
+    [self.delegateProfile performSegue:author];
+}
 
+    
 @end

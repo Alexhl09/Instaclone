@@ -13,6 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol didLike
 -(void) changeState;
 @end
+@protocol didClickPhoto
+-(void) performSegue : (PFUser *) user;
+@end
 
 
 @interface InstagramPostCollectionViewCell : UICollectionViewCell
@@ -24,6 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet PFImageView *photoImage;
 @property (weak, nonatomic) IBOutlet PFImageView *profilePicture;
 @property (weak, nonatomic) id <didLike> delegate;
+@property (weak, nonatomic) id <didClickPhoto> delegateProfile;
 @property (weak, nonatomic) IBOutlet UILabel *caption;
 @property (strong, nonatomic) Post *post;
 -(void) getProfilePicture : (NSString *) username;

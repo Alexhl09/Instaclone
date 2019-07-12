@@ -7,10 +7,7 @@
 //
 
 #import "ProfileViewController.h"
-#import "HomeViewController.h"
-#import "DetailProfileViewController.h"
-#import "DetailsPostViewController.h"
-#import "../Cells/MyPostCollectionViewCell.h"
+
 
 
 
@@ -22,8 +19,9 @@
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (strong, nonatomic) NSArray * posts;
 @property (strong, nonatomic) Post * postSelected;
-    
 
+    @property (weak, nonatomic) IBOutlet UIButton *editProfileButton;
+    
 @end
 
 @implementation ProfileViewController
@@ -36,8 +34,21 @@ UIRefreshControl *refreshControlProfile = nil;
     _collectionMyProfile.delegate = self;
     _collectionMyProfile.dataSource = self;
     //Image in the nav bar
+    
+    if(_usernameProfile == nil)
+    {
     [_name setText:[[PFUser currentUser] username]];
     [_username setText:[[PFUser currentUser] username]];
+        [_editProfileButton setHidden:NO];
+    }
+    else
+    {
+        [_name setText:[_usernameProfile username]];
+        [_username setText:[_usernameProfile username]];
+        [_editProfileButton setHidden:YES];
+    }
+    
+    
     UIImage *img = [UIImage imageNamed:@"logo.png"];
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
     [imgView setImage:img];
@@ -62,8 +73,14 @@ UIRefreshControl *refreshControlProfile = nil;
 -(void) getProfilePicture
 {
     PFQuery *query = [PFUser query];
-    
-    [query whereKey:@"username" equalTo:PFUser.currentUser.username];
+    if(_usernameProfile == nil)
+    {
+        [query whereKey:@"username" equalTo:PFUser.currentUser.username];
+    }
+    else
+    {
+        [query whereKey:@"username" equalTo:[_usernameProfile username]];
+    }
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error)
     {
         if (!error) {
@@ -133,7 +150,15 @@ UIRefreshControl *refreshControlProfile = nil;
     
     // construct query
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-    [query whereKey:@"author" equalTo:[PFUser currentUser]];
+    if(_usernameProfile == nil)
+    {
+        [query whereKey:@"author" equalTo:[PFUser currentUser]];
+    }
+    else
+    {
+        [query whereKey:@"author" equalTo:_usernameProfile];
+    }
+    
     //[query whereKey:@"likesCount" greaterThan:@100];
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"author"];
