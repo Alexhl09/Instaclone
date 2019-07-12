@@ -7,7 +7,8 @@
 //
 
 #import "DetailsPostViewController.h"
-#import "Parse/PFImageView.h"
+@import Parse.PFImageView;
+
 @import DateTools;
 @interface DetailsPostViewController ()
 @property (weak, nonatomic) IBOutlet PFImageView *profilePicture;

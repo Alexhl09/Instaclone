@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "../ViewControllers/Post.h"
-#import "Parse/PFImageView.h"
+@import Parse.PFImageView;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MyPostCollectionViewCell : UICollectionViewCell

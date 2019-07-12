@@ -7,7 +7,8 @@
 //
 
 #import "LoginViewController.h"
-#import "Parse/Parse.h"
+
+@import Parse.Parse;
 @import MaterialComponents;
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet MDCTextField *user;

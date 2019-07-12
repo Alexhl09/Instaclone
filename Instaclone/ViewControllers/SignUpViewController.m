@@ -8,7 +8,8 @@
 
 #import "SignUpViewController.h"
 
-#import "Parse/Parse.h"
+
+@import Parse.Parse;
 #import "Post.h"
 @import MaterialComponents;
 @interface SignUpViewController ()

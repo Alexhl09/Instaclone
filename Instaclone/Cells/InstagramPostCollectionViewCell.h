@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "../ViewControllers/Post.h"
+@import Parse.PFImageView;
 
-#import "Parse/PFImageView.h"
 NS_ASSUME_NONNULL_BEGIN
 /**
  Protocol didLike

@@ -135,7 +135,7 @@
     }else
     {
         int value = [_post.likeCount intValue];
-        _post.likeCount = [NSNumber numberWithInt: 1 - value];
+        _post.likeCount = [NSNumber numberWithInt:value - 1];
         NSMutableArray * peopleLiked = _post.peopleLiked;
         [peopleLiked removeObject:[[PFUser currentUser] username]];
         [_post setPeopleLiked:peopleLiked];
