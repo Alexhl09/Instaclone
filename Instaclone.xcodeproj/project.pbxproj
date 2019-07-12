@@ -3,29 +3,68 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56289238DCC5EE5565A68014 /* Pods_Instaclone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061681C34368C82E5DCD9329 /* Pods_Instaclone.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		EA4B64EC22D1A6870036128D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4B64EB22D1A6870036128D /* AppDelegate.m */; };
-		EA4B64EF22D1A6870036128D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4B64EE22D1A6870036128D /* ViewController.m */; };
 		EA4B64F222D1A6870036128D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4B64F022D1A6870036128D /* Main.storyboard */; };
 		EA4B64F422D1A6880036128D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4B64F322D1A6880036128D /* Assets.xcassets */; };
 		EA4B64F722D1A6880036128D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4B64F522D1A6880036128D /* LaunchScreen.storyboard */; };
 		EA4B64FA22D1A6880036128D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4B64F922D1A6880036128D /* main.m */; };
+		EA4B651022D3F5870036128D /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4B650F22D3F5870036128D /* HomeViewController.m */; };
+		EA4B651322D400D40036128D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4B651222D400D40036128D /* LoginViewController.m */; };
+		EA4B651622D408D80036128D /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4B651522D408D80036128D /* SignUpViewController.m */; };
+		EA4B651922D4149D0036128D /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4B651822D4149D0036128D /* FeedViewController.m */; };
+		EA4B651C22D41D330036128D /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4B651B22D41D330036128D /* PhotoViewController.m */; };
+		EA4B651F22D501E70036128D /* PickerPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA4B651E22D501E70036128D /* PickerPhotoViewController.swift */; };
+		EA4B654B22D51ACD0036128D /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4B654A22D51ACD0036128D /* Post.m */; };
+		EA4B654F22D5569C0036128D /* InstagramPostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4B654E22D5569C0036128D /* InstagramPostCollectionViewCell.m */; };
+		EAEF43CA22D68CA900E5569B /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEF43C922D68CA900E5569B /* ProfileViewController.m */; };
+		EAEF43CD22D69BF600E5569B /* DetailProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEF43CC22D69BF600E5569B /* DetailProfileViewController.m */; };
+		EAEF43D022D6B79600E5569B /* DetailsPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEF43CF22D6B79600E5569B /* DetailsPostViewController.m */; };
+		EAEF43D522D7F4DB00E5569B /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAEF43D422D7F4DB00E5569B /* CustomTabBarController.swift */; };
+		EAEF43D822D7FD4000E5569B /* MyPostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EAEF43D722D7FD4000E5569B /* MyPostCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		061681C34368C82E5DCD9329 /* Pods_Instaclone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instaclone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		545E11E588C98041B254D233 /* Pods-Instaclone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instaclone.debug.xcconfig"; path = "Target Support Files/Pods-Instaclone/Pods-Instaclone.debug.xcconfig"; sourceTree = "<group>"; };
+		D68B393857BA6F2B7A1BB59E /* Pods-Instaclone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instaclone.release.xcconfig"; path = "Target Support Files/Pods-Instaclone/Pods-Instaclone.release.xcconfig"; sourceTree = "<group>"; };
 		EA4B64E722D1A6870036128D /* Instaclone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instaclone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4B64EA22D1A6870036128D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EA4B64EB22D1A6870036128D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		EA4B64ED22D1A6870036128D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		EA4B64EE22D1A6870036128D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		EA4B64F122D1A6870036128D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA4B64F322D1A6880036128D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA4B64F622D1A6880036128D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EA4B64F822D1A6880036128D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA4B64F922D1A6880036128D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EA4B650E22D3F5870036128D /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		EA4B650F22D3F5870036128D /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		EA4B651122D400D40036128D /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		EA4B651222D400D40036128D /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		EA4B651422D408D80036128D /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		EA4B651522D408D80036128D /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		EA4B651722D4149D0036128D /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		EA4B651822D4149D0036128D /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		EA4B651A22D41D330036128D /* PhotoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		EA4B651B22D41D330036128D /* PhotoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
+		EA4B651D22D501E70036128D /* Instaclone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Instaclone-Bridging-Header.h"; sourceTree = "<group>"; };
+		EA4B651E22D501E70036128D /* PickerPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerPhotoViewController.swift; sourceTree = "<group>"; };
+		EA4B654922D51ACD0036128D /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		EA4B654A22D51ACD0036128D /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		EA4B654D22D5569C0036128D /* InstagramPostCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InstagramPostCollectionViewCell.h; sourceTree = "<group>"; };
+		EA4B654E22D5569C0036128D /* InstagramPostCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstagramPostCollectionViewCell.m; sourceTree = "<group>"; };
+		EAEF43C822D68CA900E5569B /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		EAEF43C922D68CA900E5569B /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		EAEF43CB22D69BF600E5569B /* DetailProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailProfileViewController.h; sourceTree = "<group>"; };
+		EAEF43CC22D69BF600E5569B /* DetailProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailProfileViewController.m; sourceTree = "<group>"; };
+		EAEF43CE22D6B79600E5569B /* DetailsPostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsPostViewController.h; sourceTree = "<group>"; };
+		EAEF43CF22D6B79600E5569B /* DetailsPostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsPostViewController.m; sourceTree = "<group>"; };
+		EAEF43D422D7F4DB00E5569B /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		EAEF43D622D7FD4000E5569B /* MyPostCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyPostCollectionViewCell.h; sourceTree = "<group>"; };
+		EAEF43D722D7FD4000E5569B /* MyPostCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyPostCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +72,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56289238DCC5EE5565A68014 /* Pods_Instaclone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		440C7B0B3F00F4479296B5C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				545E11E588C98041B254D233 /* Pods-Instaclone.debug.xcconfig */,
+				D68B393857BA6F2B7A1BB59E /* Pods-Instaclone.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EA4B64DE22D1A6870036128D = {
 			isa = PBXGroup;
 			children = (
 				EA4B64E922D1A6870036128D /* Instaclone */,
 				EA4B64E822D1A6870036128D /* Products */,
+				440C7B0B3F00F4479296B5C4 /* Pods */,
+				F3144C0EE4C8DC2D36C6C088 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,10 +109,11 @@
 		EA4B64E922D1A6870036128D /* Instaclone */ = {
 			isa = PBXGroup;
 			children = (
+				EA4B654C22D5566B0036128D /* Cells */,
+				EA4B654822D51AAF0036128D /* Model */,
+				EA4B650D22D3F4980036128D /* ViewControllers */,
 				EA4B64EA22D1A6870036128D /* AppDelegate.h */,
 				EA4B64EB22D1A6870036128D /* AppDelegate.m */,
-				EA4B64ED22D1A6870036128D /* ViewController.h */,
-				EA4B64EE22D1A6870036128D /* ViewController.m */,
 				EA4B64F022D1A6870036128D /* Main.storyboard */,
 				EA4B64F322D1A6880036128D /* Assets.xcassets */,
 				EA4B64F522D1A6880036128D /* LaunchScreen.storyboard */,
@@ -71,6 +123,60 @@
 			path = Instaclone;
 			sourceTree = "<group>";
 		};
+		EA4B650D22D3F4980036128D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EA4B654922D51ACD0036128D /* Post.h */,
+				EA4B654A22D51ACD0036128D /* Post.m */,
+				EA4B650E22D3F5870036128D /* HomeViewController.h */,
+				EA4B650F22D3F5870036128D /* HomeViewController.m */,
+				EA4B651122D400D40036128D /* LoginViewController.h */,
+				EA4B651222D400D40036128D /* LoginViewController.m */,
+				EA4B651422D408D80036128D /* SignUpViewController.h */,
+				EA4B651522D408D80036128D /* SignUpViewController.m */,
+				EA4B651722D4149D0036128D /* FeedViewController.h */,
+				EA4B651822D4149D0036128D /* FeedViewController.m */,
+				EA4B651A22D41D330036128D /* PhotoViewController.h */,
+				EA4B651B22D41D330036128D /* PhotoViewController.m */,
+				EA4B651E22D501E70036128D /* PickerPhotoViewController.swift */,
+				EA4B651D22D501E70036128D /* Instaclone-Bridging-Header.h */,
+				EAEF43C822D68CA900E5569B /* ProfileViewController.h */,
+				EAEF43C922D68CA900E5569B /* ProfileViewController.m */,
+				EAEF43CB22D69BF600E5569B /* DetailProfileViewController.h */,
+				EAEF43CC22D69BF600E5569B /* DetailProfileViewController.m */,
+				EAEF43CE22D6B79600E5569B /* DetailsPostViewController.h */,
+				EAEF43CF22D6B79600E5569B /* DetailsPostViewController.m */,
+				EAEF43D422D7F4DB00E5569B /* CustomTabBarController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EA4B654822D51AAF0036128D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EA4B654C22D5566B0036128D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EA4B654D22D5569C0036128D /* InstagramPostCollectionViewCell.h */,
+				EA4B654E22D5569C0036128D /* InstagramPostCollectionViewCell.m */,
+				EAEF43D622D7FD4000E5569B /* MyPostCollectionViewCell.h */,
+				EAEF43D722D7FD4000E5569B /* MyPostCollectionViewCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F3144C0EE4C8DC2D36C6C088 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				061681C34368C82E5DCD9329 /* Pods_Instaclone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -78,9 +184,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA4B64FD22D1A6880036128D /* Build configuration list for PBXNativeTarget "Instaclone" */;
 			buildPhases = (
+				753804ECE7E7B7DB9493AD60 /* [CP] Check Pods Manifest.lock */,
 				EA4B64E322D1A6870036128D /* Sources */,
 				EA4B64E422D1A6870036128D /* Frameworks */,
 				EA4B64E522D1A6870036128D /* Resources */,
+				1A6B8CDCE30F8E5A2825F306 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -102,6 +210,7 @@
 				TargetAttributes = {
 					EA4B64E622D1A6870036128D = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -136,14 +245,68 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1A6B8CDCE30F8E5A2825F306 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Instaclone/Pods-Instaclone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Instaclone/Pods-Instaclone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Instaclone/Pods-Instaclone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		753804ECE7E7B7DB9493AD60 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Instaclone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EA4B64E322D1A6870036128D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA4B64EF22D1A6870036128D /* ViewController.m in Sources */,
+				EA4B651322D400D40036128D /* LoginViewController.m in Sources */,
+				EA4B651F22D501E70036128D /* PickerPhotoViewController.swift in Sources */,
+				EA4B651622D408D80036128D /* SignUpViewController.m in Sources */,
 				EA4B64FA22D1A6880036128D /* main.m in Sources */,
+				EA4B654B22D51ACD0036128D /* Post.m in Sources */,
+				EAEF43D022D6B79600E5569B /* DetailsPostViewController.m in Sources */,
+				EA4B654F22D5569C0036128D /* InstagramPostCollectionViewCell.m in Sources */,
 				EA4B64EC22D1A6870036128D /* AppDelegate.m in Sources */,
+				EAEF43D522D7F4DB00E5569B /* CustomTabBarController.swift in Sources */,
+				EA4B651922D4149D0036128D /* FeedViewController.m in Sources */,
+				EA4B651022D3F5870036128D /* HomeViewController.m in Sources */,
+				EAEF43CA22D68CA900E5569B /* ProfileViewController.m in Sources */,
+				EA4B651C22D41D330036128D /* PhotoViewController.m in Sources */,
+				EAEF43D822D7FD4000E5569B /* MyPostCollectionViewCell.m in Sources */,
+				EAEF43CD22D69BF600E5569B /* DetailProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,8 +446,10 @@
 		};
 		EA4B64FE22D1A6880036128D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 545E11E588C98041B254D233 /* Pods-Instaclone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XYQR9G9T5T;
 				INFOPLIST_FILE = Instaclone/Info.plist;
@@ -294,14 +459,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fb.Alexhl09.Twitte.Instaclone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Instaclone/ViewControllers/Instaclone-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		EA4B64FF22D1A6880036128D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D68B393857BA6F2B7A1BB59E /* Pods-Instaclone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XYQR9G9T5T;
 				INFOPLIST_FILE = Instaclone/Info.plist;
@@ -311,6 +481,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.fb.Alexhl09.Twitte.Instaclone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Instaclone/ViewControllers/Instaclone-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
