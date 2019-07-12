@@ -9,6 +9,7 @@
 #import "ProfileViewController.h"
 #import "HomeViewController.h"
 #import "DetailProfileViewController.h"
+#import "DetailsPostViewController.h"
 #import "../Cells/MyPostCollectionViewCell.h"
 
 
@@ -20,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionMyProfile;
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (strong, nonatomic) NSArray * posts;
+@property (strong, nonatomic) Post * postSelected;
+    
 
 @end
 
@@ -109,6 +112,11 @@ UIRefreshControl *refreshControlProfile = nil;
         DetailProfileViewController * vc = [segue destinationViewController];
         vc.delegate = self;
         vc.profileImage = _profileImage.image;
+    }else if([segue.identifier isEqualToString:@"photoDetails"])
+    {
+        DetailsPostViewController * vc = [segue destinationViewController];
+        vc.delegate = self;
+        vc.myPost = _postSelected;
     }
 }
 /**
@@ -160,9 +168,18 @@ UIRefreshControl *refreshControlProfile = nil;
     return cell;
     
 }
-
+/**
+ This method gets the selected item in the collection view
+ 
+ This help to get the item selected and pass it in the details view
+ */
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return _posts.count;
 }
+    - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+    {
+        _postSelected = _posts[indexPath.row];
+        [self performSegueWithIdentifier:@"photoDetails" sender:self];
+    }
 
 @end

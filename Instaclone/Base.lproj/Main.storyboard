@@ -189,7 +189,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJO-Xj-G9m">
-                                <rect key="frame" x="0.0" y="54" width="16" height="22"/>
+                                <rect key="frame" x="0.0" y="54" width="48" height="48"/>
                                 <state key="normal" image="baseline_keyboard_arrow_left_black_48pt"/>
                                 <connections>
                                     <action selector="backPage:" destination="iq5-1X-bVQ" eventType="touchUpInside" id="1Qs-r6-Xp0"/>
@@ -549,6 +549,7 @@
                         <outlet property="numberPost" destination="B3R-6r-djE" id="CFq-Tq-cy4"/>
                         <outlet property="profileImage" destination="E2o-Ra-tA2" id="bcF-Ev-HaY"/>
                         <outlet property="username" destination="Ysy-EW-Xkg" id="fTp-Ru-gfO"/>
+                        <segue destination="l7A-P0-MQO" kind="show" identifier="photoDetails" id="gR5-6c-qks"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDB-ln-3tc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -602,7 +603,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PLH-Dl-JcA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4413" y="2364"/>
+            <point key="canvasLocation" x="4306" y="2828"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bTw-Jr-wR6">
@@ -1060,7 +1061,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uyI-YN-sEI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4333.3333333333339" y="-300"/>
+            <point key="canvasLocation" x="5142" y="1288"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="rmf-oS-z3a">
@@ -1135,4 +1136,7 @@
         <image name="search_black_24pt" width="24" height="24"/>
         <image name="whiteBubble" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="gR5-6c-qks"/>
+    </inferredMetricsTieBreakers>
 </document>
