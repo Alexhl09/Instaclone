@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MyPostCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet PFImageView *image;
-@property BOOL liked;
+@property (assign, nonatomic) BOOL liked;
 - (void)setPost:(Post *)post;
 @property (strong, nonatomic) Post * post;
 

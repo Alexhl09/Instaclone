@@ -11,7 +11,7 @@
 #import "../Cells/InstagramPostCollectionViewCell.h"
 #import "DetailsPostViewController.h"
 #import "ProfileViewController.h"
-
+#import "InfiniteScrollActivityView.h"
 
 
 @interface FeedViewController () <UICollectionViewDelegate, UICollectionViewDataSource, didLike, didClickPhoto>
@@ -20,9 +20,13 @@
 @property (strong, nonatomic) NSArray * posts;
 @property (strong, nonatomic) PFUser * selectedUsername;
 @property BOOL liked;
+    
+
 @end
 
 @implementation FeedViewController
+    bool isMoreDataLoading = false;
+    InfiniteScrollActivityView* loadingMoreView;
 UIRefreshControl *refreshControl = nil;
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -38,6 +42,19 @@ UIRefreshControl *refreshControl = nil;
     // setContent mode aspect fit
     [imgView setContentMode:UIViewContentModeScaleAspectFit];
     self.navigationItem.titleView = imgView;
+    
+    // Set up Infinite Scroll loading indicator
+    CGRect frame = CGRectMake(0, self.collectionViewInstaPost.contentSize.height, self.collectionViewInstaPost.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
+    loadingMoreView = [[InfiniteScrollActivityView alloc] initWithFrame:frame];
+    loadingMoreView.hidden = true;
+    [self.collectionViewInstaPost addSubview:loadingMoreView];
+    
+    UIEdgeInsets insets = self.collectionViewInstaPost.contentInset;
+    insets.bottom += InfiniteScrollActivityView.defaultHeight;
+    self.collectionViewInstaPost.contentInset = insets;
+    
+  
+    
     [self getLastTwentyPhotos];
     
     refreshControl = [[UIRefreshControl alloc] init];
@@ -70,7 +87,9 @@ UIRefreshControl *refreshControl = nil;
     }];
 }
 
-
+/**
+ This is going to activate a alert with all the option that the regular instagram app has
+ */
 
 - (IBAction)optionUser:(id)sender {
     UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"Options" message:@"What do you want to do?" preferredStyle:(UIAlertControllerStyleActionSheet)];
@@ -136,14 +155,73 @@ UIRefreshControl *refreshControl = nil;
 }
 
 
+
+
+
 - (void)changeState {
     [self getLastTwentyPhotos];
 
 }
 
+
+
 - (void)performSegue:(nonnull PFUser *)user {
     _selectedUsername = user;
     [self performSegueWithIdentifier:@"profile" sender:self];
+}
+    
+-(void)loadMoreData
+{
+    // construct query
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    //[query whereKey:@"likesCount" greaterThan:@100];
+    [query orderByDescending:@"createdAt"];
+    [query includeKey:@"author"];
+    query.limit = 20;
+    query.skip = _posts.count;
+    
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            self.isMoreDataLoading = false;
+            
+            // Stop the loading indicator
+            [loadingMoreView stopAnimating];
+            _posts  = [posts arrayByAddingObject:posts];
+            [_collectionViewInstaPost reloadData];
+            // do something with the array of object returned by the call
+        } else {
+        }
+        [refreshControl endRefreshing];
+    }];
+}
+
+/**
+ My infinite scrolling is not working, but this helps the user to get more photos
+ */
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    // Handle scroll behavior here
+    if(!self.isMoreDataLoading){
+        self.isMoreDataLoading = true;
+        // Calculate the position of one screen length before the bottom of the results
+        int scrollViewContentHeight = self.collectionViewInstaPost.contentSize.height;
+        
+        int scrollOffsetThreshold = scrollViewContentHeight - (self.collectionViewInstaPost.bounds.size.height / 2);
+
+        // When the user has scrolled past the threshold, start requesting
+        if(scrollView.contentOffset.y > scrollOffsetThreshold && self.collectionViewInstaPost.isDragging) {
+            isMoreDataLoading = true;
+            
+            // Update position of loadingMoreView, and start loading indicator
+            CGRect frame = CGRectMake(0, self.collectionViewInstaPost.contentSize.height, self.collectionViewInstaPost.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
+            loadingMoreView.frame = frame;
+            [loadingMoreView startAnimating];
+            
+            // Code to load more results
+            [self loadMoreData];
+            // ... Code to load more results ...
+        }
+    }
 }
     
     

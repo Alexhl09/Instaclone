@@ -36,7 +36,7 @@ public class ActivityBar: UIView {
         )
     }
     
-    func animate() {
+    @objc func animate() {
         let toZero: NSLayoutConstraint
         let toWidth: NSLayoutConstraint
         
@@ -53,12 +53,12 @@ public class ActivityBar: UIView {
         }
         self.layoutIfNeeded()
         
-        UIView.animate(withDuration:self.duration, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
+        UIView.animate(withDuration: self.duration, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
             toZero.constant = 0
             self.layoutIfNeeded()
         }, completion: nil)
         
-        UIView.animate(withDuration:self.duration * 0.7, delay: self.duration * 0.3, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
+        UIView.animate(withDuration: self.duration * 0.7, delay: self.duration * 0.3, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
             toWidth.constant = self.frame.size.width
             self.layoutIfNeeded()
         }, completion:nil)
@@ -90,7 +90,7 @@ public class ActivityBar: UIView {
             }
             
             if let progress = self.progress {
-                UIView.animate(withDuration:self.duration, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
+                UIView.animate(withDuration: self.duration, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0, options: [], animations: {
                     self.barLeft.constant = 0
                     self.barRight.constant = self.frame.size.width - (CGFloat(progress) * self.frame.size.width)
                     self.layoutIfNeeded()
@@ -124,7 +124,7 @@ public class ActivityBar: UIView {
         
         self.isHidden = false
         
-        self.animationTimer = Timer.scheduledTimer(timeInterval: self.duration + self.waitTime, target: self, selector: "animate", userInfo: nil, repeats: true)
+        self.animationTimer = Timer.scheduledTimer(timeInterval: self.duration + self.waitTime, target: self, selector: #selector(animate), userInfo: nil, repeats: true)
         self.animate()
     }
     

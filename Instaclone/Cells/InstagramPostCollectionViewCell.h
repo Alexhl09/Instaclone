@@ -8,11 +8,25 @@
 
 #import <UIKit/UIKit.h>
 #import "../ViewControllers/Post.h"
+
 #import "Parse/PFImageView.h"
 NS_ASSUME_NONNULL_BEGIN
+/**
+ Protocol didLike
+ 
+ This protocol is to notify the other view if the user liked a photo in the details view and marked it as liked with the full heart
+ 
+ */
 @protocol didLike
 -(void) changeState;
 @end
+
+/**
+ Protocol didClickPhoto
+ 
+ This protocol is going to perform the seugue with the information of the user that its photo was tapped 
+ 
+ */
 @protocol didClickPhoto
 -(void) performSegue : (PFUser *) user;
 @end
@@ -31,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *caption;
 @property (strong, nonatomic) Post *post;
 -(void) getProfilePicture : (NSString *) username;
-@property  BOOL  liked;
+@property  (assign, nonatomic) BOOL  liked;
 -(void) changeImageButtonLike : (BOOL) like;
 -(void) changeDatabaseLike : (BOOL) like;
 @end

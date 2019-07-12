@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		56289238DCC5EE5565A68014 /* Pods_Instaclone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 061681C34368C82E5DCD9329 /* Pods_Instaclone.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		EA27570B22D871AB006641B6 /* InfiniteScrollActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA27570A22D871AB006641B6 /* InfiniteScrollActivityView.m */; };
 		EA4B64EC22D1A6870036128D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4B64EB22D1A6870036128D /* AppDelegate.m */; };
 		EA4B64F222D1A6870036128D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA4B64F022D1A6870036128D /* Main.storyboard */; };
 		EA4B64F422D1A6880036128D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA4B64F322D1A6880036128D /* Assets.xcassets */; };
@@ -32,6 +33,8 @@
 		061681C34368C82E5DCD9329 /* Pods_Instaclone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Instaclone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		545E11E588C98041B254D233 /* Pods-Instaclone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instaclone.debug.xcconfig"; path = "Target Support Files/Pods-Instaclone/Pods-Instaclone.debug.xcconfig"; sourceTree = "<group>"; };
 		D68B393857BA6F2B7A1BB59E /* Pods-Instaclone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Instaclone.release.xcconfig"; path = "Target Support Files/Pods-Instaclone/Pods-Instaclone.release.xcconfig"; sourceTree = "<group>"; };
+		EA27570922D871AB006641B6 /* InfiniteScrollActivityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteScrollActivityView.h; sourceTree = "<group>"; };
+		EA27570A22D871AB006641B6 /* InfiniteScrollActivityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollActivityView.m; sourceTree = "<group>"; };
 		EA4B64E722D1A6870036128D /* Instaclone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instaclone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA4B64EA22D1A6870036128D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EA4B64EB22D1A6870036128D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -147,6 +150,8 @@
 				EAEF43CE22D6B79600E5569B /* DetailsPostViewController.h */,
 				EAEF43CF22D6B79600E5569B /* DetailsPostViewController.m */,
 				EAEF43D422D7F4DB00E5569B /* CustomTabBarController.swift */,
+				EA27570922D871AB006641B6 /* InfiniteScrollActivityView.h */,
+				EA27570A22D871AB006641B6 /* InfiniteScrollActivityView.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 				EA4B651F22D501E70036128D /* PickerPhotoViewController.swift in Sources */,
 				EA4B651622D408D80036128D /* SignUpViewController.m in Sources */,
 				EA4B64FA22D1A6880036128D /* main.m in Sources */,
+				EA27570B22D871AB006641B6 /* InfiniteScrollActivityView.m in Sources */,
 				EA4B654B22D51ACD0036128D /* Post.m in Sources */,
 				EAEF43D022D6B79600E5569B /* DetailsPostViewController.m in Sources */,
 				EA4B654F22D5569C0036128D /* InstagramPostCollectionViewCell.m in Sources */,

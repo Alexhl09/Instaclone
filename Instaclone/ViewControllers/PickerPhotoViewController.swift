@@ -46,6 +46,11 @@ class PickerPhotoViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
+    
+    /**
+     Here I prensent a view of a cocoa that is going to create filters and a great camera view
+ 
+ */
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -96,6 +101,10 @@ class PickerPhotoViewController: UIViewController, UITableViewDelegate, UITableV
     @IBAction func dismissKeyboard(_ sender: Any) {
         self.captionView.resignFirstResponder()
     }
+    
+    /**
+ If the user click on share Photo there is going to be an animation until the photo is posted
+ */
     @IBAction func sharePhoto(_ sender: Any) {
         self.activityBar.start()
         Post.postUserImage(imageToPost.image, withCaption: captionView.text) { (bool, error) in

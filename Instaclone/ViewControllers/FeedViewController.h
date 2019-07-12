@@ -10,7 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FeedViewController : UIViewController
+@interface FeedViewController : UIViewController <UIScrollViewDelegate>
+    @property (assign, nonatomic) BOOL isMoreDataLoading;
 -(void) getLastTwentyPhotos;
 @end
 

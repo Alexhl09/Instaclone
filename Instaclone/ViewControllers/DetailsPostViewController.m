@@ -51,6 +51,14 @@
     // Do any additional setup after loading the view.
 }
 
+
+/**
+ This is going to change the current photo for the one of the user, with the user name, this method is goint ot look for the profile pic
+ 
+ 
+ -Parameters:
+ -username: The user name of the user that has posted that photo
+ */
 -(void) getProfilePicture : (NSString *) username
 {
     PFQuery *query = [PFUser query];
@@ -76,6 +84,14 @@
      }];
 }
 
+/**
+ changeImageButtonLike
+ This method is going to change the photo in the button depending in the parameter
+ 
+ 
+ -Parameters:
+ -like: If the photo has been liked
+ */
 -(void) changeImageButtonLike : (BOOL) like
 {
     if(like)
@@ -89,6 +105,15 @@
     self.liked = like;
 }
 
+
+/**
+ changeDatabaseLike
+ This method is going to change the database  depending in the parameter
+ 
+ 
+ -Parameters:
+ -like: If the photo has been liked
+ */
 -(void) changeDatabaseLike : (BOOL) like
 {
     if(like)
@@ -119,15 +144,12 @@
 }
 
 - (IBAction)didLike:(UIButton *)sender {
-     NSLog(@"%@ likes befores", _myPost[@"likeCount"]);
-    NSLog(@"%i", self.liked);
+    
     [self changeImageButtonLike:!self.liked];
-     NSLog(@"%i", self.liked);
+
     [self changeDatabaseLike:self.liked];
-    NSLog(@"%@ likes", _myPost[@"likeCount"]);
-   
-    
-    
+
+
 }
 
 

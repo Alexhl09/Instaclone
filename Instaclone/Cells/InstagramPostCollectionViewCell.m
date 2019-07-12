@@ -29,13 +29,7 @@
    
     [self changeImageButtonLike:self.liked];
 
-//    let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
-//    imageView.isUserInteractionEnabled = true
-//    imageView.addGestureRecognizer(tapGestureRecognizer)
-    
-    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapMyImage)];
-    [_photoImage addGestureRecognizer:tap];
-    [_photoImage setUserInteractionEnabled:YES];
+   
     PFUser * author = post[@"author"];
     NSDate * myDate = author.createdAt;
 
@@ -84,6 +78,10 @@
          
      }];
 }
+
+/**
+    likePost is goign to notify the view controller that the cell has been liked
+ */
 - (IBAction)likePost:(UIButton *)sender {
     
     [self changeImageButtonLike:!self.liked];
@@ -91,7 +89,14 @@
     
     
 }
-
+/**
+ changeImageButtonLike
+ This method is going to change the photo in the button depending in the parameter
+ 
+ 
+ -Parameters:
+ -like: If the photo has been liked
+ */
 -(void) changeImageButtonLike : (BOOL) like
 {
     if(like)
@@ -104,7 +109,14 @@
     }
      self.liked = like;
 }
-
+/**
+ changeDatabaseLike
+ This method is going to change the database  depending in the parameter
+ 
+ 
+ -Parameters:
+ -like: If the photo has been liked
+ */
 -(void) changeDatabaseLike : (BOOL) like
 {
     if(like)
@@ -132,8 +144,12 @@
         }];
     }
 }
+/**
+ tapImage
+ This method is to call the delegate's method that someone tap inside the photo of the user
+ and is going to send thge info of that user depending on the cell
+ */
 - (IBAction)tapImage:(UIButton *)sender {
-    NSLog(@"HEY");
     PFUser * author = _post[@"author"];
     [self.delegateProfile performSegue:author];
 }
