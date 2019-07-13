@@ -2,7 +2,7 @@
 
 **Instagram* is a photo sharing app using Parse as its backend.
 
-Time spent: **15** hours spent in total
+Time spent: **20** hours spent in total http://g.recordit.co/85V7gVADp8.gif
 
 ## User Stories
 
@@ -28,25 +28,25 @@ The following **optional** features are implemented:
 - User Profiles:
   - [x] Allow the logged in user to add a profile photo
   - [x] Display the profile photo with each post
-  - [ ] Tapping on a post's username or profile photo goes to that user's profile page
+  - [x] Tapping on a post's username or profile photo goes to that user's profile page
 - [ ] User can comment on a post and see all comments for each post in the post details screen.
 - [x] User can like a post and see number of likes for each post in the post details screen.
 - [x] Implement a custom camera view.
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] Implemented filters with a cocoapod
+- [x] Can change the profile's picture
+Please list two areas of the assignment you'd like to discuss further with your peers during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
-
-1.
-2.
+Protocols and delegate are so useful, I hadn't used them before, but I am so glad to know about them know
+Structure of NoSQL Databases, I think that many people didnt undestand documents inside of a collection
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/85V7gVADp8.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
@@ -55,11 +55,16 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
-
+- [Parse]
+- DateTools
+- [YPImagePicker]
+- [ActivityBar]
 
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+I had a serious problem with github, I installed a cocoapod that later I didn't use, but I commit that version. when I was trying to push my commits, one of them was too big that github didn't let me to push my changes. I had to save my last version and remove all the previous commits.
 
 ## License
 
