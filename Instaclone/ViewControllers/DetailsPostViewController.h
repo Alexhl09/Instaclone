@@ -20,7 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id<NewPostDelegate> delegate;
 @property (nonatomic, strong) Post * myPost;
 @property (nonatomic, weak) id <didLike> delegateLike;
-@property BOOL liked;
+@property (assign, nonatomic) BOOL liked;
+@property (nonatomic, strong) PFFileObject * imageSelected;
 -(void) getProfilePicture : (NSString *) username;
 
 @end

@@ -116,10 +116,12 @@ class PickerPhotoViewController: UIViewController, UITableViewDelegate, UITableV
                 
                 self.present(alert, animated: true, completion:
                     {
+                       self.tabBarController?.selectedIndex = 0;
                        
-                        self.tabBarController?.selectedIndex = 0;
+
                     
                 })
+          
             }else
             {
                 let alert = UIAlertController(title: "Error", message: "There was an error uploading the photo", preferredStyle: .alert)
@@ -133,6 +135,7 @@ class PickerPhotoViewController: UIViewController, UITableViewDelegate, UITableV
             }
              self.activityBar.stop()
         }
+
     }
     
     /*

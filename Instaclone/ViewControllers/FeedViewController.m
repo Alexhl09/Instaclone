@@ -14,12 +14,12 @@
 #import "InfiniteScrollActivityView.h"
 
 
-@interface FeedViewController () <UICollectionViewDelegate, UICollectionViewDataSource, didLike, didClickPhoto>
+@interface FeedViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UITabBarDelegate, didLike, didClickPhoto>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionViewInstaPost;
 @property (strong, nonatomic) Post * selectedPost;
 @property (strong, nonatomic) NSArray * posts;
 @property (strong, nonatomic) PFUser * selectedUsername;
-@property BOOL liked;
+@property (assign, nonatomic) BOOL liked;
     
 
 @end
@@ -30,11 +30,22 @@
 UIRefreshControl *refreshControl = nil;
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
+    // Do any additional setup after loading the view.
+}
+
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
+{
+    
+}
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
     _liked = NO;
     _posts = [NSArray new];
     _collectionViewInstaPost.delegate = self;
     _collectionViewInstaPost.dataSource = self;
-    
+    _collectionViewInstaPost.scrollEnabled = YES;
     
     UIImage *img = [UIImage imageNamed:@"logo.png"];
     UIImageView *imgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
@@ -53,19 +64,17 @@ UIRefreshControl *refreshControl = nil;
     insets.bottom += InfiniteScrollActivityView.defaultHeight;
     self.collectionViewInstaPost.contentInset = insets;
     
-  
+    
     
     [self getLastTwentyPhotos];
     
     refreshControl = [[UIRefreshControl alloc] init];
     refreshControl.tintColor = [UIColor grayColor];
-
+    
     [refreshControl addTarget:self action:@selector(getLastTwentyPhotos) forControlEvents:UIControlEventValueChanged];
-
+    
     [_collectionViewInstaPost addSubview:refreshControl];
-    // Do any additional setup after loading the view.
 }
-
 -(void) getLastTwentyPhotos
 {
     // construct query
@@ -191,6 +200,7 @@ UIRefreshControl *refreshControl = nil;
             [_collectionViewInstaPost reloadData];
             // do something with the array of object returned by the call
         } else {
+            
         }
         [refreshControl endRefreshing];
     }];
@@ -208,7 +218,9 @@ UIRefreshControl *refreshControl = nil;
         
         int scrollOffsetThreshold = scrollViewContentHeight - (self.collectionViewInstaPost.bounds.size.height / 2);
 
+ 
         // When the user has scrolled past the threshold, start requesting
+        NSLog(@"%i",scrollView.contentOffset.y);
         if(scrollView.contentOffset.y > scrollOffsetThreshold && self.collectionViewInstaPost.isDragging) {
             isMoreDataLoading = true;
             

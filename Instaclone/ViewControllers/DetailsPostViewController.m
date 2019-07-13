@@ -49,6 +49,7 @@
     _dateLabel.text = [[myDate shortTimeAgoSinceNow] stringByAppendingString:@" ago"];
     _likeCount.text = [[NSString stringWithFormat:@"%@", _myPost[@"likeCount"]] stringByAppendingString:@" likes"];
     [self getProfilePicture:[author username]];
+    
     // Do any additional setup after loading the view.
 }
 

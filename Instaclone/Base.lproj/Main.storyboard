@@ -546,6 +546,7 @@
                     <connections>
                         <outlet property="collectionMyProfile" destination="fe3-Jw-suL" id="1qr-Fc-Sce"/>
                         <outlet property="editProfileButton" destination="tB7-JZ-SEw" id="983-pn-eeC"/>
+                        <outlet property="logOutButton" destination="lwd-93-POX" id="ZiH-xd-bMN"/>
                         <outlet property="name" destination="mUX-wL-0zo" id="Fan-k9-ebY"/>
                         <outlet property="numberPost" destination="B3R-6r-djE" id="CFq-Tq-cy4"/>
                         <outlet property="profileImage" destination="E2o-Ra-tA2" id="bcF-Ev-HaY"/>
@@ -1159,7 +1160,7 @@
         <image name="whiteBubble" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gR5-6c-qks"/>
+        <segue reference="OTd-ol-lRE"/>
         <segue reference="lOF-lS-zJm"/>
     </inferredMetricsTieBreakers>
 </document>

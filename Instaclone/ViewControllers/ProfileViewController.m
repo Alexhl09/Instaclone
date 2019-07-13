@@ -14,12 +14,13 @@
 @interface ProfileViewController () <EditedProfileDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *numberPost;
 @property (weak, nonatomic) IBOutlet UILabel *username;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *logOutButton;
 @property (weak, nonatomic) IBOutlet UILabel *name;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionMyProfile;
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (strong, nonatomic) NSArray * posts;
 @property (strong, nonatomic) Post * postSelected;
-
+@property (strong, nonatomic) PFFileObject * selectedImage;
     @property (weak, nonatomic) IBOutlet UIButton *editProfileButton;
     
 @end
@@ -40,6 +41,7 @@ UIRefreshControl *refreshControlProfile = nil;
     [_name setText:[[PFUser currentUser] username]];
     [_username setText:[[PFUser currentUser] username]];
         [_editProfileButton setHidden:NO];
+   
     }
     else
     {
@@ -134,6 +136,7 @@ UIRefreshControl *refreshControlProfile = nil;
         DetailsPostViewController * vc = [segue destinationViewController];
         vc.delegate = self;
         vc.myPost = _postSelected;
+        vc.imageSelected = _selectedImage;
     }
 }
 /**
@@ -204,6 +207,7 @@ UIRefreshControl *refreshControlProfile = nil;
     - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
     {
         _postSelected = _posts[indexPath.row];
+        _selectedImage = _postSelected[@"image"];
         [self performSegueWithIdentifier:@"photoDetails" sender:self];
     }
 
